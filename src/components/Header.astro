@@ -1,13 +1,29 @@
 ---
+
 ---
 
 <header>
     <nav class="flex justify-center items-center py-4 ">
-        <ul class="flex gap-4 bg-gradient-to-tr from-[#485ad0] text-white lg:text-lg fixed rounded-2xl shadow-xl px-4 py-2 top-2 z-50">
-            <li><a href="/blog">Inicio</a></li>
+        <ul class="flex items-center gap-4 bg-[#485ad0] text-white lg:text-lg fixed rounded-2xl shadow-xl px-4 py-2 top-2 z-50 opacity-90 ">
+            <li>
+                <a href="/blog">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                </a>
+            </li>
             <li><a href="/">Sobre mí</a></li>
             <li><a href="/about">Experiencia</a></li>
             <li><a href="/contact">Proyectos</a></li>            
         </ul>
     </nav>
 </header>
+
+<style>
+    li:hover {
+        transform: scale(1.1);
+        transition: all 0.3s ease-in-out;
+    }
+    li:hover a {
+        text-shadow: 0 0 0.5px #fff;
+        transition: all 0.3s ease-in-out;
+    }
+</style>
