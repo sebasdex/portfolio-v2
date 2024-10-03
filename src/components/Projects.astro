@@ -1,0 +1,67 @@
+---
+const projects = [
+  {
+    id: 9,
+    src: "/images/music-app.jpg",
+    title: "Music App",
+    link: "https://playerlab.netlify.app/",
+    desc: "Esta aplicación permite reproducir canciones sólo durante 30 segundos y mostrar las playlist y canciones más escuchadas. Se utilizó la API de spotify para obtener los datos de las canciones y playlists. Se desarrolló con React y Tailwind CSS.",
+  },
+  {
+    id: 1,
+    src: "/images/ropavejero.jpg",
+    title: "carrito de compras",
+    link: "https://ropavejero.netlify.app/",
+    desc: "Carrito de compras utilizando tecnologías como HTML, Tailwind CSS y React con vite. Estas herramientas me permitieron crear una interfaz intuitiva y atractiva, con estilos responsivos y funcionalidades dinámicas.",
+  },
+  {
+    id: 2,
+    src: "/images/rest-countries.png",
+    title: "API Búsqueda Paises",
+    link: "https://countries-api-dc.netlify.app/",
+    desc: "Esta aplicación web implementada en React se utilizó una API de datos geográficos para mostrar información relevante de diversos países, como población, capital, idioma y moneda. Los usuarios podrán seleccionar un país o buscarlo y la aplicación mostrará los datos correspondientes.",
+  },
+  {
+    id: 3,
+    src: "/images/multistep.png",
+    title: "Formularios",
+    link: "https://multistep-dc.netlify.app/",
+    desc: "Este proyecto consiste en desarrollar formularios interactivos en React utilizando la biblioteca de estilos Tailwind CSS. Los formularios contarán con validaciones para asegurar la precisión de los datos ingresados por el usuario y permitirán avanzar al siguiente paso solo cuando se cumplan dichas validaciones.",
+  },
+  {
+    id: 6,
+    src: "/images/tip-calc.png",
+    title: "propinas",
+    link: "https://tip-calculator-sebasdc.netlify.app/",
+    desc: "Calculadora de propinas utilizando JavaScript, HTML y CSS. Esta aplicación permite calcular la propina a dejar en función del monto de la cuenta y el porcentaje de propina deseado.",
+  },
+  {
+    id: 8,
+    src: "/images/filter-job.png",
+    title: "Filtro por tags",
+    link: "https://filterjobs-dc.netlify.app/",
+    desc: "En este proyecto, se desarrolló una aplicación en React que permite filtrar una lista de trabajos en función de los tags seleccionados por el usuario. La aplicación mostrará una lista inicial de trabajos y proporcionará opciones de tags para que el usuario pueda filtrarlos según sus intereses.",
+  },
+];
+
+---
+
+<section class="space-y-8 my-10">
+    <h1 class="text-4xl text-white uppercase font-bold text-center">Proyectos</h1>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 p-4 w-8/12 mx-auto">
+        {
+            projects.map((project) => (
+                <article class=" p-2 text-white h-72 bg-gray-900 rounded-lg flex flex-col justify-between">
+                    <a href={project.link} class="h-40" target="_blank" rel="noopener noreferrer">
+                        <img src={project.src} alt={project.title} class="h-full w-full object-cover hover:scale-95 transition-all duration-300" />
+                    </a>
+                    <div class="p-2 my-2">
+                        <h2 class="capitalize">{project.title}</h2>
+                        <p class="text-sm overflow-y-auto text-gray-400 truncate text-wrap h-16">{project.desc}</p>
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+</section>
+</style>
