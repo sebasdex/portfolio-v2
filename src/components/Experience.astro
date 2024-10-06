@@ -1,7 +1,7 @@
 ---
 ---
 
-<section class="space-y-8" >
+<section class="space-y-8 min-w-80">
     <div class="text-white flex justify-center items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-text"><path d="M12 7v14"/><path d="M16 12h2"/><path d="M16 8h2"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/><path d="M6 12h2"/><path d="M6 8h2"/></svg>        
         <h1 class="text-3xl uppercase font-bold text-center">Experiencia</h1>
@@ -10,8 +10,8 @@
         <article class="timeline-item">
             <div class="timeline-content border-b-4 border-l-4 border-blue-500">
                 <h2>Desarrollador Web Freelance</h2>
-                <p>Actualmente, soy desarrollador web freelance, creando sitios y aplicaciones web, mientras me actualizo para estar al tanto de las últimas tecnologías.</p>
-                <span>2024 - Presente</span>
+                <p class="">Actualmente, soy desarrollador web freelance, creando sitios y aplicaciones web, mientras me actualizo para estar al tanto de las últimas tecnologías.</p>
+                <span>2023 - Presente</span>
             </div>
         </article>
         <article class="timeline-item">
@@ -37,7 +37,7 @@
     max-width: 800px;
     margin: 0 auto;
 }
-
+/* Barra-del-tiempo */
 .timeline::after {
     content: '';
     position: absolute;
@@ -45,23 +45,40 @@
     background-color: #ddd;
     top: 0;
     bottom: 0;
-    left: 50%;
+    right: 3%;
     margin-left: -3px;
+}
+
+@media (min-width: 768px) {
+    .timeline::after {
+        right: 50%;
+    }
 }
 
 .timeline-item {
     padding: 10px 40px;
     position: relative;
     background-color: inherit;
-    width: 50%;
+    width: 100%;
 }
 
+@media (min-width: 768px) {
+    .timeline-item {
+        width: 50%;
+    }
+}
 .timeline-item:nth-child(odd) {
     left: 0;
 }
 
 .timeline-item:nth-child(even) {
-    left: 50%;
+    left: 0;
+}
+
+@media (min-width: 768px) {
+    .timeline-item:nth-child(even) {
+        left: 50%;
+    }
 }
 
 .timeline-item::before {
@@ -69,7 +86,7 @@
     position: absolute;
     width: 25px;
     height: 25px;
-    right: -13px;
+    right: 0px;
     background-color: #3778E2;
     border: 4px solid white;
     top: 15px;
@@ -77,8 +94,52 @@
     z-index: 1;
 }
 
+@media (min-width: 415px) {
+    .timeline-item::before {
+        right: 2px;
+    }
+}
+@media (min-width: 480px) {
+    .timeline-item::before {
+        right: 5px;
+    }
+}
+@media (min-width: 560px) {
+    .timeline-item::before {
+        right: 7px;
+    }
+}
+@media (min-width: 768px) {
+    .timeline-item::before {
+        right: -13px;
+    }
+}
+
 .timeline-item:nth-child(even)::before {
-    left: -13px;
+    right: 0px;
+}
+
+@media (min-width: 415px) {
+    .timeline-item:nth-child(even)::before {
+        right: 2px;
+    }
+}
+@media (min-width: 480px) {
+    .timeline-item:nth-child(even)::before {
+        right: 5px;
+    }
+}
+@media (min-width: 560px) {
+    .timeline-item:nth-child(even)::before {
+        right: 7px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .timeline-item:nth-child(even)::before {
+        left: -13px;
+    }
 }
 
 .timeline-content {
@@ -86,6 +147,7 @@
     background-color: white;
     position: relative;
     border-radius: 6px;
+    width: 100%;
 }
 
 .timeline-content h2 {
