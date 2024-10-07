@@ -23,6 +23,9 @@ const skills = [
     },
     {
         name: "MySQL",
+    },
+    {
+        name: "Git"
     }
 ];
 ---
@@ -35,9 +38,11 @@ const skills = [
     <article class="flex md:justify-center md:gap-4 md:items-center flex-wrap p-2 mx-auto rounded-lg">
         {
             skills.map((skill) => (
-                <article class="flex justify-center items-center uppercase lg:p-2 text-white">                    
-                        <h2 class="text-lg font-bold">- {skill.name}</h2>                    
-                </article>
+                <ul class="flex justify-center items-center uppercase lg:p-2 text-white">                    
+                    <li class="px-2 flex items-center justify-center">
+                        <h2 class="text-lg font-bold">{' - '}{skill.name}</h2> 
+                    </li>                   
+                </ul>
             ))
         }
     </article>    
