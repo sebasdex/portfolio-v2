@@ -16,10 +16,10 @@ const projects = [
   },
   {
     id: 2,
-    src: "/images/rest-countries.png",
-    title: "API Búsqueda Paises",
-    link: "https://countries-api-dc.netlify.app/",
-    desc: "Esta aplicación web implementada en React se utilizó una API de datos geográficos para mostrar información relevante de diversos países, como población, capital, idioma y moneda. Los usuarios podrán seleccionar un país o buscarlo y la aplicación mostrará los datos correspondientes.",
+    src: "/images/passport.webp",
+    title: "Pasaporte de cursos",
+    link: "https://passportcourse.netlify.app/",
+    desc: "Esta app web permite administrar los cursos que toman los empleados de la empresa. Los empleados pueden ver el estado de sus cursos con sus respectivos accesos y ver los cursos que tienen pendientes de aprobación. Los administradores tienen control total del sistema y pueden agregar, eliminar y modificar cursos.",
   },
   {
     id: 3,
@@ -43,57 +43,83 @@ const projects = [
     desc: "En este proyecto, se desarrolló una aplicación en React que permite filtrar una lista de trabajos en función de los tags seleccionados por el usuario. La aplicación mostrará una lista inicial de trabajos y proporcionará opciones de tags para que el usuario pueda filtrarlos según sus intereses.",
   },
 ];
-
 ---
 
 <section class="space-y-8 my-10 min-w-80" id="projects">
   <div class="text-white flex justify-center items-center gap-2">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-library-big"><rect width="8" height="18" x="3" y="3" rx="1"/><path d="M7 3v18"/><path d="M20.4 18.9c.2.5-.1 1.1-.6 1.3l-1.9.7c-.5.2-1.1-.1-1.3-.6L11.1 5.1c-.2-.5.1-1.1.6-1.3l1.9-.7c.5-.2 1.1.1 1.3.6Z"/></svg>
-    <h1 class="text-3xl  uppercase font-bold text-center">Proyectos</h1>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-library-big"
+      ><rect width="8" height="18" x="3" y="3" rx="1"></rect><path d="M7 3v18"
+      ></path><path
+        d="M20.4 18.9c.2.5-.1 1.1-.6 1.3l-1.9.7c-.5.2-1.1-.1-1.3-.6L11.1 5.1c-.2-.5.1-1.1.6-1.3l1.9-.7c.5-.2 1.1.1 1.3.6Z"
+      ></path></svg
+    >
+    <h1 class="text-3xl uppercase font-bold text-center">Proyectos</h1>
   </div>
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 p-4 mx-auto lg:w-3/5 lg:max-w-max w-full">
-        {
-            projects.map((project) => (
-                <article class=" p-2 text-white h-72 bg-gray-900 rounded-lg flex flex-col justify-between">
-                    <a href={project.link} class="h-40 hover:scale-95 transition-all duration-300 more" target="_blank" rel="noopener noreferrer">
-                        <img src={project.src} alt={project.title} class="h-full w-full object-cover  ease-in-out" />
-                    </a>
-                    <div class="p-2 my-2">
-                        <h2 class="capitalize">{project.title}</h2>
-                        <p class="text-sm overflow-y-auto text-gray-400 truncate text-wrap h-16">{project.desc}</p>
-                    </div>
-                </article>
-            ))
-        }
-    </div>
+  <div
+    class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 p-4 mx-auto lg:w-3/5 lg:max-w-max w-full"
+  >
+    {
+      projects.map((project) => (
+        <article class=" p-2 text-white h-72 bg-gray-900 rounded-lg flex flex-col justify-between">
+          <a
+            href={project.link}
+            class="h-40 hover:scale-95 transition-all duration-300 more"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={project.src}
+              alt={project.title}
+              class="h-full w-full object-cover ease-in-out"
+            />
+          </a>
+          <div class="p-2 my-2">
+            <h2 class="uppercase">{project.title}</h2>
+            <p class="text-sm text-gray-400 truncate text-wrap h-16">
+              {project.desc}
+            </p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
 </section>
 
 <style>
-   .more {
-  position: relative;
-  transition: all 0.3s ease-in-out;
-  overflow: hidden;
-}
+  .more {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
 
-.more:hover::after {
-  content: "Ver más";
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7); 
-  color: white; 
-  z-index: 10;
-  backdrop-filter: blur(4px); 
-  opacity: 0;
-}
+  .more:hover::after {
+    content: "Ver más";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+  }
 
-.more:hover::after {
-  opacity: 1; 
-}
-
+  .more:hover::after {
+    opacity: 1;
+  }
 </style>
