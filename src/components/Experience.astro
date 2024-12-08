@@ -3,188 +3,172 @@
 ---
 
 <section class="space-y-8 min-w-80">
-    <div class="text-white flex justify-center items-center gap-2">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-book-open-text"
-            ><path d="M12 7v14"></path><path d="M16 12h2"></path><path
-                d="M16 8h2"></path><path
-                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
-            ></path><path d="M6 12h2"></path><path d="M6 8h2"></path></svg
-        >
-        <h1 class="text-3xl uppercase font-bold text-center">Experiencia</h1>
-    </div>
-    <div class="timeline">
-        <article class="timeline-item">
-            <div class="timeline-content border-b-4 border-l-4 border-blue-500">
-                <h2>Desarrollador Web JavaScript</h2>
-                <p class="">
-                    Actualmente, soy desarrollador web freelance, creando sitios
-                    y aplicaciones, mientras me actualizo para estar al tanto de
-                    las últimas tecnologías.
-                </p>
-                <span>2023 - Presente</span>
-            </div>
-        </article>
-        <article class="timeline-item">
-            <div class="timeline-content border-b-4 border-r-4 border-blue-500">
-                <h2>Desarrollo Web - Capacitación</h2>
-                <p>
-                    Participé en cursos de JavaScript y su ecosistema,
-                    fortaleciendo mis habilidades para crear aplicaciones más
-                    interactivas y modernas.
-                </p>
-                <span>2022 - 2023</span>
-            </div>
-        </article>
-        <article class="timeline-item">
-            <div class="timeline-content border-b-4 border-l-4 border-blue-500">
-                <h2>Desarrollo Web PHP, MySQL</h2>
-                <p>
-                    Desarrollé sistemas de control de inventarios, personal y
-                    estadisticas para área de Recursos Humanos y Tecnologías.
-                </p>
-                <span>2020 - 2021</span>
-            </div>
-        </article>
-    </div>
+  <div class="text-white flex justify-center items-center gap-2">
+    <p class="text-3xl"><span aria-label="Experience">📖</span></p>
+    <h1 class="text-3xl uppercase font-bold text-center">Experiencia</h1>
+  </div>
+  <div class="timeline">
+    <article class="timeline-item">
+      <div class="timeline-content border-b-4 border-l-4 border-blue-500">
+        <h2>Desarrollador Web JavaScript</h2>
+        <p class="">
+          Actualmente, soy desarrollador web freelance, creando sitios y
+          aplicaciones, mientras me actualizo para estar al tanto de las últimas
+          tecnologías.
+        </p>
+        <span>2023 - Presente</span>
+      </div>
+    </article>
+    <article class="timeline-item">
+      <div class="timeline-content border-b-4 border-r-4 border-blue-500">
+        <h2>Desarrollo Web - Capacitación</h2>
+        <p>
+          Participé en cursos de JavaScript y su ecosistema, fortaleciendo mis
+          habilidades para crear aplicaciones más interactivas y modernas.
+        </p>
+        <span>2022 - 2023</span>
+      </div>
+    </article>
+    <article class="timeline-item">
+      <div class="timeline-content border-b-4 border-l-4 border-blue-500">
+        <h2>Desarrollo Web PHP, MySQL</h2>
+        <p>
+          Desarrollé sistemas de control de inventarios, personal y estadisticas
+          para área de Recursos Humanos y Tecnologías.
+        </p>
+        <span>2020 - 2021</span>
+      </div>
+    </article>
+  </div>
 </section>
 
 <style>
-    .timeline {
-        position: relative;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    /* Barra-del-tiempo */
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  /* Barra-del-tiempo */
+  .timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: #ddd;
+    top: 0;
+    bottom: 0;
+    right: 3%;
+    margin-left: -3px;
+  }
+
+  @media (min-width: 768px) {
     .timeline::after {
-        content: "";
-        position: absolute;
-        width: 6px;
-        background-color: #ddd;
-        top: 0;
-        bottom: 0;
-        right: 3%;
-        margin-left: -3px;
+      right: 50%;
     }
+  }
 
-    @media (min-width: 768px) {
-        .timeline::after {
-            right: 50%;
-        }
-    }
+  .timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 100%;
+  }
 
+  @media (min-width: 768px) {
     .timeline-item {
-        padding: 10px 40px;
-        position: relative;
-        background-color: inherit;
-        width: 100%;
+      width: 50%;
     }
+  }
+  .timeline-item:nth-child(odd) {
+    left: 0;
+  }
 
-    @media (min-width: 768px) {
-        .timeline-item {
-            width: 50%;
-        }
-    }
-    .timeline-item:nth-child(odd) {
-        left: 0;
-    }
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
 
+  @media (min-width: 768px) {
     .timeline-item:nth-child(even) {
-        left: 0;
+      left: 50%;
     }
+  }
 
-    @media (min-width: 768px) {
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-    }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 0px;
+    background-color: #3778e2;
+    border: 4px solid white;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
 
+  @media (min-width: 415px) {
     .timeline-item::before {
-        content: "";
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        right: 0px;
-        background-color: #3778e2;
-        border: 4px solid white;
-        top: 15px;
-        border-radius: 50%;
-        z-index: 1;
+      right: 2px;
     }
+  }
+  @media (min-width: 480px) {
+    .timeline-item::before {
+      right: 5px;
+    }
+  }
+  @media (min-width: 560px) {
+    .timeline-item::before {
+      right: 7px;
+    }
+  }
+  @media (min-width: 768px) {
+    .timeline-item::before {
+      right: -10px;
+    }
+  }
 
-    @media (min-width: 415px) {
-        .timeline-item::before {
-            right: 2px;
-        }
-    }
-    @media (min-width: 480px) {
-        .timeline-item::before {
-            right: 5px;
-        }
-    }
-    @media (min-width: 560px) {
-        .timeline-item::before {
-            right: 7px;
-        }
-    }
-    @media (min-width: 768px) {
-        .timeline-item::before {
-            right: -10px;
-        }
-    }
+  .timeline-item:nth-child(even)::before {
+    right: 0px;
+  }
 
+  @media (min-width: 415px) {
     .timeline-item:nth-child(even)::before {
-        right: 0px;
+      right: 2px;
     }
+  }
+  @media (min-width: 480px) {
+    .timeline-item:nth-child(even)::before {
+      right: 5px;
+    }
+  }
+  @media (min-width: 560px) {
+    .timeline-item:nth-child(even)::before {
+      right: 7px;
+    }
+  }
 
-    @media (min-width: 415px) {
-        .timeline-item:nth-child(even)::before {
-            right: 2px;
-        }
+  @media (min-width: 768px) {
+    .timeline-item:nth-child(even)::before {
+      left: -15px;
     }
-    @media (min-width: 480px) {
-        .timeline-item:nth-child(even)::before {
-            right: 5px;
-        }
-    }
-    @media (min-width: 560px) {
-        .timeline-item:nth-child(even)::before {
-            right: 7px;
-        }
-    }
+  }
 
-    @media (min-width: 768px) {
-        .timeline-item:nth-child(even)::before {
-            left: -15px;
-        }
-    }
+  .timeline-content {
+    padding: 20px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    width: 100%;
+  }
 
-    .timeline-content {
-        padding: 20px;
-        background-color: white;
-        position: relative;
-        border-radius: 6px;
-        width: 100%;
-    }
+  .timeline-content h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+  }
 
-    .timeline-content h2 {
-        margin-top: 0;
-        font-size: 1.5em;
-    }
-
-    .timeline-content span {
-        font-size: 0.85em;
-        color: #777;
-        display: block;
-        margin-top: 10px;
-    }
+  .timeline-content span {
+    font-size: 0.85em;
+    color: #777;
+    display: block;
+    margin-top: 10px;
+  }
 </style>

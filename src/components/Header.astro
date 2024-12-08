@@ -3,28 +3,62 @@
 ---
 
 <header id="home">
-    <nav class="flex justify-center items-center py-4">
-        <ul class="flex items-center gap-4 bg-blue-500 text-white text-base lg:text-lg fixed rounded-2xl shadow-xl px-4 py-2 top-2 z-50 opacity-90 min-w-max">
-            <li>
-                <a href="#home">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-                </a>
-            </li>
-            <li><a href="/#about">Sobre mí</a></li>
-            <li><a href="/#skills">Habilidades</a></li>
-            <li><a href="/#experience">Experiencia</a></li>
-            <li><a href="/#projects">Proyectos</a></li>            
-        </ul>
-    </nav>
+  <nav class="flex justify-center items-center py-4">
+    <ul
+      class="flex items-center gap-4 bg-blue-500 text-white text-base lg:text-lg fixed rounded-2xl shadow-xl px-4 py-2 top-2 z-50 opacity-90 min-w-max"
+    >
+      <li>
+        <a href="#home">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-house"
+            ><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path
+              d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+            ></path></svg
+          >
+        </a>
+      </li>
+      <li><a href="/#about">Sobre mí</a></li>
+      <li><a href="/#skills">Habilidades</a></li>
+      <li><a href="/#experience">Experiencia</a></li>
+      <li><a href="/#projects">Proyectos</a></li>
+    </ul>
+  </nav>
 </header>
 
 <style>
-    li:hover {
-        transform: scale(1.1);
-        transition: all 0.3s ease-in-out;
-    }
-    li:hover a {
-        text-shadow: 0 0 0.5px #fff;
-        transition: all 0.3s ease-in-out;
-    }
+  li:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+  li:hover a {
+    text-shadow: 0 0 0.5px #fff;
+    transition: all 0.3s ease-in-out;
+  }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let lastScrollY = 0;
+    const nav = document.querySelector("nav");
+    window.addEventListener("scroll", () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY <= 40) {
+        nav?.classList.remove("hidden");
+      } else if (currentScrollY > lastScrollY) {
+        nav?.classList.add("hidden");
+      } else {
+        nav?.classList.remove("hidden");
+      }
+      lastScrollY = currentScrollY;
+    });
+  });
+</script>;
