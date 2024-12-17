@@ -1,19 +1,5 @@
 ---
-const showAge = () => {
-  // Fecha de nacimiento: 6 de diciembre de 1993
-  const birthday = new Date(1993, 5, 20); // Mes 11 = diciembre
-  const today = new Date();
-  let age = today.getFullYear() - birthday.getFullYear();
-  if (
-    today.getMonth() < birthday.getMonth() || // Aún no llega el mes de cumpleaños
-    (today.getMonth() === birthday.getMonth() &&
-      today.getDate() < birthday.getDate()) // Es el mes pero no el día
-  ) {
-    age--; // Si no ha cumplido, restamos 1
-  }
 
-  return age;
-};
 ---
 
 <section
@@ -26,15 +12,14 @@ const showAge = () => {
     <div
       class="absolute bottom-0 left-0 w-full bg-white p-4 px-2 text-center space-x-1 lg:space-x-4 z-50"
     >
-      <span class="text-2xl">Desarrollador Web</span>
-      <span class="text-2xl">Frontend</span>
+      <span class="text-2xl" id="typewriter">Desarrollador Web</span>
     </div>
   </article>
   <section class="space-y-4 p-4 lg:w-1/2 lg:h-96">
     <article class="text-white space-y-2" id="about">
       <div class="flex flex-col gap-4 md:flex-row">
         <h1 class="text-4xl text-white uppercase font-bold">
-          ¡Hola! <span aria-label="Hi">👋</span>
+          ¡Hola, soy Sebastián! <span aria-label="Hi">👋</span>
         </h1>
         <div class="flex items-center gap-2">
           <div class="circle"></div>
@@ -42,8 +27,8 @@ const showAge = () => {
         </div>
       </div>
       <p class="lg:text-lg tracking-wide lg:pl-4">
-        Soy Sebastián, con dos años de experiencia en desarrollo web frontend.
-        Estoy trabajando con tecnologías como HTML, CSS, JavaScript, React, y me
+        Desarrollador Web Frontend, con dos años de experiencia. Estoy
+        trabajando con tecnologías como HTML, CSS, JavaScript, React, y me
         interesa seguir profundizando en frameworks como Astro y Nextjs. Me
         encanta la idea de crear soluciones que sean útiles y visualmente
         atractivas.
@@ -171,3 +156,31 @@ const showAge = () => {
     }
   }
 </style>
+<script>
+  import Typewriter from "typewriter-effect/dist/core";
+  const showAge = () => {
+    // Fecha de nacimiento: 6 de diciembre de 1993
+    const birthday = new Date(1993, 5, 20); // Mes 11 = diciembre
+    const today = new Date();
+    let age = today.getFullYear() - birthday.getFullYear();
+    if (
+      today.getMonth() < birthday.getMonth() || // Aún no llega el mes de cumpleaños
+      (today.getMonth() === birthday.getMonth() &&
+        today.getDate() < birthday.getDate()) // Es el mes pero no el día
+    ) {
+      age--; // Si no ha cumplido, restamos 1
+    }
+
+    return age.toString();
+  };
+  const app = document.getElementById("typewriter");
+  new Typewriter(app, {
+    strings: [
+      "Desarrollador Web Frontend",
+      "2 años de experiencia",
+      "Sebastián " + showAge() + " años",
+    ],
+    autoStart: true,
+    loop: true,
+  });
+</script>
