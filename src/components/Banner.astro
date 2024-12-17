@@ -3,7 +3,7 @@
 ---
 
 <section
-  class="mt-10 flex flex-col justify-center gap-4 items-center p-4 lg:flex-row lg:gap-8 md:mb-20 xl:mb-0"
+  class="mt-10 flex flex-col justify-center gap-4 items-center p-4 lg:flex-row lg:gap-8 lg:mt-16 md:mb-20 xl:mb-0"
 >
   <article
     class="h-72 w-64 p-2 bg-white -rotate-12 infoImage lg:ml-20 lg:h-96 lg:w-80"
@@ -12,13 +12,13 @@
     <div
       class="absolute bottom-0 left-0 w-full bg-white p-4 px-2 text-center space-x-1 lg:space-x-4 z-50"
     >
-      <span class="text-2xl" id="typewriter">Desarrollador Web</span>
+      <span class="text-xl md:text-2xl" id="typewriter">Desarrollador Web</span>
     </div>
   </article>
-  <section class="space-y-4 p-4 lg:w-1/2 lg:h-96">
+  <section class="space-y-4 p-4 lg:w-1/2 lg:h-96 lg:-mt-20">
     <article class="text-white space-y-2" id="about">
       <div class="flex flex-col gap-4 md:flex-row">
-        <h1 class="text-4xl text-white uppercase font-bold">
+        <h1 class="text-2xl md:text-4xl text-white uppercase font-bold mt-4">
           ¡Hola, soy Sebastián! <span aria-label="Hi">👋</span>
         </h1>
         <div class="flex items-center gap-2">
@@ -159,16 +159,15 @@
 <script>
   import Typewriter from "typewriter-effect/dist/core";
   const showAge = () => {
-    // Fecha de nacimiento: 6 de diciembre de 1993
-    const birthday = new Date(1993, 5, 20); // Mes 11 = diciembre
+    const birthday = new Date(1993, 5, 20);
     const today = new Date();
     let age = today.getFullYear() - birthday.getFullYear();
     if (
-      today.getMonth() < birthday.getMonth() || // Aún no llega el mes de cumpleaños
+      today.getMonth() < birthday.getMonth() ||
       (today.getMonth() === birthday.getMonth() &&
-        today.getDate() < birthday.getDate()) // Es el mes pero no el día
+        today.getDate() < birthday.getDate())
     ) {
-      age--; // Si no ha cumplido, restamos 1
+      age--;
     }
 
     return age.toString();
