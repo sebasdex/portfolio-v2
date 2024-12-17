@@ -13,9 +13,6 @@ const skills = [
     name: "React",
   },
   {
-    name: "Next.js",
-  },
-  {
     name: "Tailwind CSS",
   },
   {
@@ -30,13 +27,13 @@ const skills = [
 ];
 ---
 
-<section class="space-y-6 mx-auto my-8 p-4" id="experience">
+<section class="space-y-6 w-4/5 mx-auto my-8 p-4" id="experience">
   <div class="text-white flex justify-center items-center gap-2">
     <p class="text-3xl"><span aria-label="Idea">💡</span></p>
     <h1 class="text-3xl uppercase font-bold text-center">Habilidades</h1>
   </div>
   <article
-    class="flex md:justify-center md:gap-4 md:items-center flex-wrap p-2 mx-auto rounded-lg"
+    class="flex md:justify-between md:gap-4 md:items-center flex-wrap p-2 mx-auto rounded-lg"
   >
     {
       skills.map((skill) => (
