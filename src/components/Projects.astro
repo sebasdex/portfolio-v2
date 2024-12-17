@@ -6,6 +6,8 @@ const projects = [
     title: "Music App",
     link: "https://playerlab.netlify.app/",
     desc: "Esta aplicación hace uso de la API de Spotify para mostrar canciones, albums y artistas. Se desarrolló con React y Tailwind CSS.",
+    alt: "Music App",
+    github: "https://github.com/sebasdex/music-app",
   },
   {
     id: 1,
@@ -13,6 +15,8 @@ const projects = [
     title: "carrito de compras",
     link: "https://ropavejero.vercel.app/",
     desc: "Carrito de compras utilizando tecnologías como Nextjs, Tailwind CSS e IA para imágenes. Estas herramientas me permitieron crear una interfaz intuitiva y atractiva, con estilos responsivos y funcionalidades dinámicas.",
+    alt: "carrito de compras",
+    github: "https://github.com/sebasdex/ropavejero-next",
   },
   {
     id: 2,
@@ -20,6 +24,8 @@ const projects = [
     title: "Pasaporte de cursos",
     link: "https://passportcourse.netlify.app/",
     desc: "Esta app web permite administrar los cursos que toman los empleados de la empresa. Los empleados pueden ver el estado de sus cursos con sus respectivos accesos y ver los cursos que tienen pendientes de aprobación. Los administradores tienen control total del sistema y pueden agregar, eliminar y modificar cursos.",
+    alt: "pasaporte de cursos",
+    github: "https://github.com/sebasdex/passport-front",
   },
   {
     id: 3,
@@ -27,6 +33,8 @@ const projects = [
     title: "Formularios",
     link: "https://multistep-dc.netlify.app/",
     desc: "Este proyecto consiste en desarrollar formularios interactivos en React utilizando la biblioteca de estilos Tailwind CSS. Los formularios contarán con validaciones para asegurar la precisión de los datos ingresados por el usuario y permitirán avanzar al siguiente paso solo cuando se cumplan dichas validaciones.",
+    alt: "formularios",
+    github: "https://github.com/sebasdex/multi-step-form",
   },
   {
     id: 6,
@@ -34,6 +42,8 @@ const projects = [
     title: "propinas",
     link: "https://tip-calculator-sebasdc.netlify.app/",
     desc: "Calculadora de propinas utilizando JavaScript, HTML y CSS. Esta aplicación permite calcular la propina a dejar en función del monto de la cuenta y el porcentaje de propina deseado.",
+    alt: "propinas",
+    github: "https://github.com/sebasdex/challenge-tip-calculator",
   },
   {
     id: 8,
@@ -41,6 +51,8 @@ const projects = [
     title: "Filtro por tags",
     link: "https://filterjobs-dc.netlify.app/",
     desc: "En este proyecto, se desarrolló una aplicación en React que permite filtrar una lista de trabajos en función de los tags seleccionados por el usuario. La aplicación mostrará una lista inicial de trabajos y proporcionará opciones de tags para que el usuario pueda filtrarlos según sus intereses.",
+    alt: "filtro por tags",
+    github: "https://github.com/sebasdex/filter-job-react",
   },
 ];
 ---
@@ -56,21 +68,62 @@ const projects = [
     {
       projects.map((project) => (
         <article class=" p-2 text-white h-72 bg-gray-900 rounded-lg flex flex-col justify-between">
-          <a
-            href={project.link}
-            class="relative h-40 hover:scale-[0.98] overflow-hidden transition-all duration-300"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <div class="relative h-40 hover:scale-[0.98] overflow-hidden transition-all duration-300">
             <img
               src={project.src}
               alt={project.title}
               class="h-full w-full object-cover"
             />
-            <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 text-white opacity-0 transition-opacity duration-300 hover:opacity-100">
-              <span class="text-base">Ver más</span>
+            <div class="absolute inset-0 flex justify-center items-center gap-8 bg-black bg-opacity-80 text-white opacity-0 transition-opacity duration-300 hover:opacity-100">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex flex-col items-center hover:scale-[1.1] transition-transform duration-300 text-white/60 hover:text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-globe"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                  <path d="M2 12h20" />
+                </svg>
+                <p class="text-xs">Ir a proyecto</p>
+              </a>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex flex-col items-center hover:scale-[1.1] transition-all duration-300 text-white/60 hover:text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-github"
+                >
+                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                  <path d="M9 18c-4.51 2-5-2-7-2" />
+                </svg>
+                <p class="text-xs">Ver repositorio</p>
+              </a>
             </div>
-          </a>
+          </div>
           <div class="p-2 my-2">
             <h2 class="uppercase">{project.title}</h2>
             <p class="text-sm text-gray-400 truncate text-wrap h-16">
